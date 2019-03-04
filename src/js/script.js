@@ -9,9 +9,15 @@
   const bannerMoves = document.getElementById('js-banner-position');
 
   const firstText = document.getElementById('js-first-text');
-  const secondText = document.getElementById('js-second-text');
+	const secondText = document.getElementById('js-second-text');
+	
+	const firstPaper = document.getElementById('js-first-paper');
+
+	const secondPaper = document.getElementById('js-second-paper');
+	
 
   const firstAnimation = (() => {
+		firstPaper.setAttribute('class', 'paperplane-showing');
     firstText.setAttribute('class', 'banner-text-positionR');
     bannerMoves.setAttribute('class', 'banner-half-position');
   });
@@ -28,6 +34,7 @@
 	});
 
 	const preFinalTextAnimation = (() => {
+		secondPaper.setAttribute('class', 'paperplane-corner-showing');
 		preFinalText.setAttribute('class', 'banner-text-prefinal-shown');
 		textDecoration.setAttribute('class', 'underline-decoration-shown');
 	});
@@ -43,10 +50,12 @@
 	});
 
 	const clearAnimation = (() => {
+		firstPaper.setAttribute('class', 'paperplane-hidden');
+		secondPaper.setAttribute('class', 'paperplane-corner-hidden');
 		bannerMoves.setAttribute('class', 'banner-cleared-position');
 	});
 
-	const fullAnimation = function () {
+  bannerContainer.addEventListener('click', () => {
 		setTimeout(firstAnimation, 3000);
 		setTimeout(secondAnimation, 6000);
 		setTimeout(scaledAnimation, 9000);
@@ -54,6 +63,5 @@
 		setTimeout(finalTextAnimation, 15000);
 		setTimeout(clearText, 18000);
 		setTimeout(clearAnimation, 19000);
-	};
-	setInterval(fullAnimation, 19000);
+	});
 }());

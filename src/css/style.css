@@ -176,4 +176,38 @@ body {
 .underlined-text {
   text-decoration: underline; }
 
+.paperplane-hidden {
+  width: 55px;
+  position: absolute;
+  z-index: 1000;
+  top: 40%;
+  left: -50%;
+  transform: rotate(50deg); }
+
+.paperplane-showing {
+  width: 55px;
+  position: absolute;
+  z-index: 1000;
+  top: 40%;
+  left: 150%;
+  transform: rotate(50deg);
+  transition: 3s ease; }
+
+.paperplane-corner-hidden {
+  width: 55px;
+  position: absolute;
+  z-index: 1000;
+  top: 100%;
+  left: -40%;
+  transform: rotate(15deg); }
+
+.paperplane-corner-showing {
+  width: 55px;
+  position: absolute;
+  z-index: 1000;
+  top: -50%;
+  left: 140%;
+  transform: rotate(8deg);
+  transition: 4s ease; }
+
 /*# sourceMappingURL=style.css.map */
