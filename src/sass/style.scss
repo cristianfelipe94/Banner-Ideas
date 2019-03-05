@@ -12,7 +12,7 @@ body {
 
 .banner-container-size {
 	background-color: #de6b70;
-	height: 300px;
+	height: 250px;
 	width: 300px;
 	margin: 10vh auto;
 	position: relative;
@@ -227,8 +227,8 @@ body {
 	width: 55px;
 	position: absolute;
 	z-index: 1000;
-	top: -50%;
-	left: 140%;
+	top: -90%;
+	left: 160%;
 	transform: rotate(8deg);
 	transition: 4s ease;
 }
