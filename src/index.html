@@ -288,15 +288,12 @@
 			return timeFraction < 1 ? ((timeFraction * internalEndsTop) - internalStartTop) + 'px' : ((1 * internalEndsTop) - internalStartTop) + 'px';
 		};
 
-
-
 		function runFirst() {
 			const firstAnimationStyles = (() => {
 				firstText.setAttribute('class', 'banner-text-positionR');
 				bannerMoves.setAttribute('class', 'banner-half-position');
 			});
 			setTimeout(firstAnimationStyles, 2000);
-
 
 			const secondAnimationStyles = (() => {
 				secondText.setAttribute('class', 'banner-text-positionL');
@@ -326,13 +323,14 @@
 			});
 			setTimeout(scaledAnimation,2000);
 
-			const secondAnimationPlane = (()=> {
-				let present = performance.now();
+			const secondAnimationPlane = (() => {
+				const present = performance.now();
 				//console.log(present);
 				(function secondAnim () {
 					secondPaper.style.left = acrossSide(200, 500, 2000, present);
-					secondPaper.style.top = acrossTop(-250, -300, 2000, present);
+					//secondPaper.style.top = acrossTop(-250, -300, 2000, present);
 					requestAnimationFrame(secondAnim);
+					//console.log(present1);
 					if (parseFloat(secondPaper.style.left) >= 350) {
 						clearTimeout(secondAnimationPlane);
 						runThrid();
@@ -340,7 +338,7 @@
 				}());
 			});
 			setTimeout(secondAnimationPlane,4000);
-		}		
+		};
 
 		function runThrid() {
 			const preFinalTextAnimation = (() => {
