@@ -274,7 +274,7 @@
 			const internalDuration = durationRate;
 			const internalPresent = present; 
 			let future = performance.now();
-			timeFraction = ((future - (internalPresent - internalStartsLeft)) / internalDuration);
+			timeFraction = (((future - internalPresent)) / internalDuration);
 			return timeFraction < 1 ? ((timeFraction * internalEndsLeft) - internalStartsLeft) + 'px' : ((1 * internalEndsLeft) - internalStartsLeft) + 'px';
 		};
 
@@ -284,7 +284,7 @@
 			const internalDuration = durationRate;
 			const internalPresent = present;
 			let future = performance.now();
-			timeFraction = ((future - (internalPresent - internalStartTop)) / internalDuration);
+			timeFraction = (((future - internalPresent)) / internalDuration);
 			return timeFraction < 1 ? ((timeFraction * internalEndsTop) - internalStartTop) + 'px' : ((1 * internalEndsTop) - internalStartTop) + 'px';
 		};
 
@@ -302,15 +302,18 @@
 			setTimeout(secondAnimationStyles, 4000);
 
 			const firstAnimationPlane = (()=> {
-				let present = performance.now();
-				(function startAnim () {
-					firstPaper.style.left = acrossSide(400, 800, 2000, present);
-					requestAnimationFrame(startAnim);
-					if(parseFloat(firstPaper.style.left) >= 350) {
-						clearTimeout(firstAnimationPlane);
-						runSecond();
-					}
-				}());
+				function runAnimation() {
+					let present = performance.now();
+					requestAnimationFrame(function gettingRunningFrames() {
+						firstPaper.style.left = acrossSide(200, 600, 2000, present);
+						if(parseFloat(firstPaper.style.left) >= 350) {
+							clearTimeout(firstAnimationPlane);
+							runSecond();
+						}
+						requestAnimationFrame(gettingRunningFrames);
+					});
+				};
+				runAnimation();
 			});
 			setTimeout(firstAnimationPlane, 6000);
 		};
@@ -324,18 +327,19 @@
 			setTimeout(scaledAnimation,2000);
 
 			const secondAnimationPlane = (() => {
-				const present = performance.now();
-				//console.log(present);
-				(function secondAnim () {
-					secondPaper.style.left = acrossSide(200, 500, 2000, present);
-					//secondPaper.style.top = acrossTop(-250, -300, 2000, present);
-					requestAnimationFrame(secondAnim);
-					//console.log(present1);
-					if (parseFloat(secondPaper.style.left) >= 350) {
-						clearTimeout(secondAnimationPlane);
-						runThrid();
-					}
-				}());
+				function runAnimation() {
+					let present = performance.now();
+					requestAnimationFrame(function gettingRunningFrames () {
+						secondPaper.style.left = acrossSide(200, 600, 2000, present);
+						//secondPaper.style.top = acrossTop(-250, -300, 2000, present);
+						/*if (parseFloat(secondPaper.style.left) >= 350) {
+							clearTimeout(secondAnimationPlane);
+							runThrid();
+						}*/
+						requestAnimationFrame(gettingRunningFrames);
+					});
+				};
+				runAnimation();
 			});
 			setTimeout(secondAnimationPlane,4000);
 		};
