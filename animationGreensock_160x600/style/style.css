@@ -1,0 +1,278 @@
+body {
+	color: white;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	height: 100vh;
+	letter-spacing: 1px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+}
+
+.banner-container-size {
+	background-color: #de6b70;
+	height: 160px;
+	margin: 80vh auto;
+	overflow: hidden;
+	position: relative;
+	width: 600px;
+}
+
+.underline-decoration {
+	background-color: white;
+	bottom: 20%;
+	height: 5px;
+	position: absolute;
+	opacity: 0;
+	right: 2%;
+	transition: 1s ease-in-out; 
+	width: 50%;
+	z-index: 101;
+}
+
+.underline-decoration-shown {
+	background-color: white;
+	height: 5px;
+	bottom: 32%;
+	opacity: 1;
+	position: absolute;
+	right: 2%;
+	transition: 1s ease-in-out; 
+	z-index: 101;
+	width: 50%;
+}
+
+.banner-based-position {
+	background-color: #c96065;
+	height: 100%;
+	left: 0%;
+	top : -100%;
+	position: absolute;
+	transition: 1s ease-in-out; 
+	transform: rotate(0deg) scale(1);
+	width: 100%;
+}
+
+.banner-full-position {
+	background-color: #c96065;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+	position: absolute;
+	transition: 1s ease-in-out; 
+	width: 100%;
+}
+
+.banner-full-position .banner-secondary-position {
+	background-color: #2384a5;
+	height: 100%;
+	left: 0%;
+	position: absolute; 
+	top: 0%;
+	transition: 1s ease-in-out;
+	width: 50%;
+}
+
+.banner-scaled-position {
+	background-color: #c96065;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+	position: absolute;
+	transform: rotate(50deg) scale(2);
+	transition: 1s ease-in-out; 
+	width: 100%;
+}
+
+.banner-cleared-position {
+	background-color: #de6b70;
+	height: 100%;
+	left: 0%;
+    top: -100%;
+	position: absolute;
+	transform: rotate(0deg) scale(1);
+	transition: 1s ease-in-out; 
+	width: 100%;
+}
+
+.banner-secondary-color {
+	background-color: #2384a5;
+	height: 100%;
+	left: 0%;
+	position: absolute;
+	transition: 1s ease-in-out;
+	top: 0%;
+	width: 50%;
+}
+
+.banner-secondary-position {
+	background-color: #2384a5;
+	height: 100%;
+	left: 0%;
+	position: absolute; 
+	top: 100%;
+	transition: 1s ease-in-out;
+	width: 50%;
+}
+
+.banner-text-positionL {
+	display: inline-block;
+	left: 0;
+	margin: 0;
+	padding: 4%;
+	position: absolute;
+	opacity: 1;
+	transition: 1s ease-in-out;
+	top: 50%;
+	width: 90%;
+}
+
+.banner-text-gone-left {
+	display: inline-block;
+	left: 0;
+	margin: 0;
+	position: absolute;
+	opacity: 0;
+	transition: 1s ease-in-out;
+	top: 50%;
+	width: 50%;
+}
+
+.banner-text-positionR {
+	display: inline-block;
+	margin: 0;
+	opacity: 1;
+	padding: 2%;
+	position: absolute;
+	right: 0;
+	transition: 1s ease-in-out;
+	top: 50%;
+	width: 45%;
+}
+
+.banner-text-gone-right {
+	display: inline-block;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	transition: 1s ease-in-out; 
+	top: 50%;
+	width: 50%;
+}
+
+.banner-text-prefinal {
+	display: inline-block;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	transition: 1s ease-in-out;
+	text-align: center;
+	top: 50%;
+	width: 100%; 
+	z-index: 100;
+}
+
+.banner-text-prefinal-shown {
+	display: inline-block;
+	margin: 0;
+	opacity: 1;
+	position: absolute;
+	transition: 1s ease-in-out;
+	text-align: center;
+	top: 50%;
+	width: 100%;
+	z-index: 100; 
+}
+
+.banner-text-final {
+	display: inline-block;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	transition: 1s ease-in-out;
+	text-align: center;
+	top: 50%;
+	z-index: 100;
+	width: 100%;
+}
+
+.banner-text-final-shown {
+	display: inline-block;
+	margin: 0;
+	opacity: 1;
+	position: absolute;
+	transition: 1s ease-in-out;
+	text-align: center;
+	top: 50%;
+	z-index: 100;
+	width: 100%;
+}
+
+.underlined-text {
+	text-decoration: underline;
+}
+
+.first-paperplane-hidden {
+	left: -150px;
+	position: absolute;
+	transform: rotate(50deg);
+	top: 30%;
+	width: 55px;
+	z-index: 1000;
+}
+
+.secondPlane-corner-hidden {
+	left: -12%;
+    position: absolute;
+    top: 100%;
+    transform: rotate(18deg);
+	width: 55px;
+    z-index: 1000;
+}
+
+.thirdPlane-corner-hidden {
+    left: 10%;
+    position: absolute;
+    transform: rotate(10deg);
+    top: 140%;
+	width: 55px;
+    z-index: 1000;
+}
+
+.fourthPlane-corner-hidden {
+    left: 25%;
+    position: absolute;
+    transform: rotate(-2deg);
+    top: 130%;
+    width: 55px;
+    z-index: 1000;
+}
+
+.fifthPlane-corner-hidden {
+	left: -20%;
+    position: absolute;
+    top: 175%;
+    transform: rotate(8deg);
+    width: 55px;
+    z-index: 1000;
+}
+
+.sixthPlane-corner-hidden {
+    left: 30%;
+    position: absolute;
+    transform: rotate(8deg);
+    top: 165%;
+    z-index: 1000;
+    width: 55px;
+}
+
+.seventhPlane-corner-hidden {
+    left: 2%;
+    position: absolute;
+    transform: rotate(15deg);
+    top: 195%;
+    z-index: 1000;
+    width: 55px;
+}
